@@ -1,5 +1,8 @@
 ---
-title: Edit
+title: "shadcn/ui Edit Component | UI Component in Refine v5"
+display_title: "Edit"
+sidebar_label: "Edit"
+description: "Explore how to integrate Edit in Refine v5. Learn integrate breadcrumb and custom for polished admin UIs. Real-world snippets included."
 source: https://github.com/refinedev/refine/tree/main/packages/refine-ui/registry/new-york/refine-ui/views/edit-view.tsx
 ---
 
@@ -134,7 +137,7 @@ import { AutoSaveIndicator } from "@/components/refine-ui/form/auto-save-indicat
 
 export default function PostEditPage() {
   const {
-    refineCore: { autoSaveProps, queryResult, formLoading },
+    refineCore: { autoSaveProps, query, formLoading },
   } = useForm({
     refineCoreProps: {
       autoSave: { enabled: true, debounce: 1000 },
@@ -144,7 +147,7 @@ export default function PostEditPage() {
   return (
     <EditView>
       <EditViewHeader actionsSlot={<AutoSaveIndicator {...autoSaveProps} />} />
-      <LoadingOverlay loading={queryResult.isLoading || formLoading}>
+      <LoadingOverlay loading={query.isLoading || formLoading}>
         {/* Your form content */}
       </LoadingOverlay>
     </EditView>

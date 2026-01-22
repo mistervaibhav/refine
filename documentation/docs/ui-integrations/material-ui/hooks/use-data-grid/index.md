@@ -1,5 +1,8 @@
 ---
-title: useDataGrid
+title: "useDataGrid Hook | Options, Patterns & Edge Cases in Refine v5"
+display_title: "useDataGrid"
+sidebar_label: "useDataGrid"
+description: "Learn to use the useDataGrid hook in Refine v5. Learn integrate pagination and function for polished admin UIs. Real-world snippets included."
 source: /packages/mui/src/hooks/useDataGrid
 ---
 
@@ -93,7 +96,7 @@ export const PostsList: React.FC = () => {
 };
 ```
 
-If you want to sort externally from the `<DataGrid>` component. You can use `setSorter` like this:
+If you want to sort externally from the `<DataGrid>` component. You can use `setSorters` like this:
 
 ```tsx
 import { useDataGrid, List } from "@refinedev/mui";
@@ -111,10 +114,10 @@ const columns: GridColDef[] = [
 ];
 
 export const PostsList: React.FC = () => {
-  const { dataGridProps, setSorter } = useDataGrid();
+  const { dataGridProps, setSorters } = useDataGrid();
 
   const handleSorting = (order: "asc" | "desc") => {
-    setSorter([
+    setSorters([
       {
         field: "title",
         order,
@@ -718,7 +721,7 @@ Current `GridSortModel` compatible with [`<DataGrid>`][data-grid] component.
 
 When the user sorts a column, this function is called with the new sort model.
 
-`dataGridProps.onSortModelChange` automatically transform `GridSortModel` to [`CrudSorting`][crudsorting] and call `setSorter` function. If you want to override it, you can use like this:
+`dataGridProps.onSortModelChange` automatically transform `GridSortModel` to [`CrudSorting`][crudsorting] and call `setSorters` function. If you want to override it, you can use like this:
 
 ```tsx
 <DataGrid

@@ -1,5 +1,8 @@
 ---
-title: Strapi v4
+title: "Strapi V4 Integration Guide | REST API Integration in Refine v5"
+display_title: "Strapi v4"
+sidebar_label: "Strapi v4"
+description: "Secure Strapi V4 in Refine v5. Learn best practices. Learn scale fields and posts for custom APIs and scalable data flows. Real-world snippets included."
 source: https://github.com/refinedev/refine/tree/main/packages/strapi-v4
 swizzle: true
 ---
@@ -182,7 +185,7 @@ import { List, EditButton, ShowButton, useTable } from "@refinedev/antd";
 import { Table, Space } from "antd";
 
 const PostList = () => {
-  const { tableProps, sorter } = useTable<IPost>({
+  const { tableProps, sorters } = useTable<IPost>({
     meta: {
       // highlight-start
       fields: ["id", "title"],
@@ -321,7 +324,7 @@ import {
 } from "antd";
 
 const PostList = () => {
-  const { tableProps, sorter } = useTable<IPost>({
+  const { tableProps, sorters } = useTable<IPost>({
     meta: {
       fields: ["id", "title"],
       // highlight-next-line
@@ -484,7 +487,7 @@ const PostList = () => {
   // highlight-next-line
   const [publicationState, setPublicationState] = React.useState("live");
 
-  const { tableProps, sorter } = useTable<IPost>({
+  const { tableProps, sorters } = useTable<IPost>({
     meta: {
       fields: ["id", "title", "publishedAt"],
       populate: ["category"],
@@ -647,7 +650,7 @@ export const PostList: React.FC = () => {
   //highlight-end
   const [publicationState, setPublicationState] = useState("live");
 
-  const { tableProps, sorter } = useTable<IPost>({
+  const { tableProps, sorters } = useTable<IPost>({
     meta: {
       populate: ["category", "cover"],
       //highlight-start
@@ -704,13 +707,13 @@ export const PostList: React.FC = () => {
         <Table.Column
           dataIndex="id"
           title="ID"
-          defaultSortOrder={getDefaultSortOrder("id", sorter)}
+          defaultSortOrder={getDefaultSortOrder("id", sorters)}
           sorter={{ multiple: 3 }}
         />
         <Table.Column
           dataIndex="title"
           title="Title"
-          defaultSortOrder={getDefaultSortOrder("title", sorter)}
+          defaultSortOrder={getDefaultSortOrder("title", sorters)}
           sorter={{ multiple: 2 }}
         />
         <Table.Column
@@ -783,7 +786,7 @@ const PostList = () => {
   // highlight-next-line
   const [locale, setLocale] = React.useState("en");
   const [publicationState, setPublicationState] = React.useState("live");
-  const { tableProps, sorter } = useTable<IPost>({
+  const { tableProps, sorters } = useTable<IPost>({
     meta: {
       fields: ["id", "title", "publishedAt", "locale"],
       populate: ["category"],

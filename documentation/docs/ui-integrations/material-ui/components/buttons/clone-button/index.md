@@ -1,5 +1,8 @@
 ---
-title: Clone
+title: "MUI Clone Button Component | CRUD Actions in Refine v5"
+display_title: "Clone"
+sidebar_label: "Clone"
+description: "Learn to integrate Clone Button in Refine v5. Learn integrate Material Design, components for polished admin UIs. Hands-on examples included."
 swizzle: true
 ---
 
@@ -211,7 +214,7 @@ setInitialRoutes(["/posts"]);
 import { CloneButton } from "@refinedev/mui";
 
 const MyCloneComponent = () => {
-  return <CloneButton resourceNameOrRouteName="posts" hideText={true} />;
+  return <CloneButton resource="posts" hideText={true} />;
 };
 
 // visible-block-end

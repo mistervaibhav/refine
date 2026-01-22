@@ -122,7 +122,6 @@ export const OrderList = () => {
           <GridActionsCellItem
             key={1}
             icon={<CheckOutlinedIcon color="success" />}
-            sx={{ padding: "2px 6px" }}
             label={t("buttons.accept")}
             showInMenu
             onClick={() => {
@@ -140,7 +139,6 @@ export const OrderList = () => {
           <GridActionsCellItem
             key={2}
             icon={<CloseOutlinedIcon color="error" />}
-            sx={{ padding: "2px 6px" }}
             label={t("buttons.reject")}
             showInMenu
             onClick={() =>

@@ -1,5 +1,8 @@
 ---
-title: Show
+title: "shadcn/ui Show Component | UI Component in Refine v5"
+display_title: "Show"
+sidebar_label: "Show"
+description: "Set up Show in Refine v5. Learn best practices. Learn integration patterns for Radix UI, Tailwind CSS for polished admin UIs. Explore with code snippets."
 source: https://github.com/refinedev/refine/tree/main/packages/refine-ui/registry/new-york/refine-ui/views/show-view.tsx
 ---
 
@@ -119,8 +122,9 @@ export default function PostShowPage() {
 import { useShow } from "@refinedev/core";
 
 export default function PostShowPage() {
-  const { queryResult } = useShow();
-  const { data, isLoading, error } = queryResult;
+  const { result, query } = useShow();
+  const { isLoading, error } = query;
+  const record = result;
 
   if (error) {
     return (
@@ -137,8 +141,8 @@ export default function PostShowPage() {
       <LoadingOverlay loading={isLoading}>
         {/* Display your record details */}
         <div>
-          <h3>{data?.data.title}</h3>
-          <p>{data?.data.content}</p>
+          <h3>{record?.title}</h3>
+          <p>{record?.content}</p>
         </div>
       </LoadingOverlay>
     </ShowView>
@@ -157,9 +161,9 @@ import { TextField } from "@/components/refine-ui/fields/text-field";
 import { DateField } from "@/components/refine-ui/fields/date-field";
 
 export default function PostShowPage() {
-  const { queryResult } = useShow();
-  const { data, isLoading } = queryResult;
-  const record = data?.data;
+  const { result, query } = useShow();
+  const { isLoading } = query;
+  const record = result;
 
   return (
     <ShowView>

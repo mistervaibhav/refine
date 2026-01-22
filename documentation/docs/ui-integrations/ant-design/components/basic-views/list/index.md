@@ -1,5 +1,8 @@
 ---
-title: List
+title: "Ant Design List Component | UI Component in Refine v5"
+display_title: "List"
+sidebar_label: "List"
+description: "Implement List in Refine v5. Learn the key steps. Learn integrate hide for polished admin UIs. See practical code samples. Fast to follow."
 swizzle: true
 ---
 
@@ -741,7 +744,7 @@ render(
 <PropsTable module="@refinedev/antd/List"
 headerProps-type="[`PageHeaderProps`](https://procomponents.ant.design/en-US/components/page-header)"
 headerButtonProps-type="[`SpaceProps`](https://ant.design/components/space/)"
-createButtonProps-type="[`ButtonProps`](https://ant.design/components/button/#API) & `{ resourceName: string }`"
+createButtonProps-type="[`ButtonProps`](https://ant.design/components/button/#API) & `{ resource: string }`"
 breadcrumb-default="[`<Breadcrumb>`](https://ant.design/components/breadcrumb/)"
 canCreate-default="If the resource is passed a create component, `true` else `false`"
 />

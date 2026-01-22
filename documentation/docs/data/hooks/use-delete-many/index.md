@@ -1,5 +1,8 @@
 ---
-title: useDeleteMany
+title: "useDeleteMany Hook | Usage & Patterns in Refine v5"
+display_title: "useDeleteMany"
+sidebar_label: "useDeleteMany"
+description: "Integrate Use Delete Many in Refine v5. Learn best practices. Learn scale mutation and data for custom APIs and scalable data flows."
 siderbar_label: useDeleteMany
 source: packages/core/src/data/hooks/useDeleteMany.ts
 ---
@@ -27,7 +30,7 @@ mutate({
 });
 
 // You can access mutation state through the mutation object:
-console.log(mutation.isLoading); // mutation loading state
+console.log(mutation.isPending); // mutation loading state
 console.log(mutation.data); // mutation response data
 console.log(mutation.error); // mutation error
 ```

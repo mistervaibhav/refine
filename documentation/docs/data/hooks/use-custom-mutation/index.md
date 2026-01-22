@@ -1,5 +1,8 @@
 ---
-title: useCustomMutation
+title: "useCustomMutation Hook | Best Practices for Usage & Patterns in Refine v5"
+display_title: "useCustomMutation"
+sidebar_label: "useCustomMutation"
+description: "Learn to use the useCustomMutation hook in Refine v5. Explore best practices to scale values for custom APIs and scalable data flows."
 source: packages/core/src/data/hooks/useCustomMutation.ts
 ---
 
@@ -42,7 +45,7 @@ mutate({
 });
 
 // You can access mutation state through the mutation object:
-console.log(mutation.isLoading); // mutation loading state
+console.log(mutation.isPending); // mutation loading state
 console.log(mutation.data); // mutation response data
 console.log(mutation.error); // mutation error
 ```

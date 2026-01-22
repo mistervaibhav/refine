@@ -153,7 +153,6 @@ export const RecentOrders: React.FC = () => {
           <GridActionsCellItem
             key={1}
             icon={<CheckOutlined color="success" />}
-            sx={{ padding: "2px 6px" }}
             label={t("buttons.accept")}
             showInMenu
             onClick={() => {
@@ -171,7 +170,6 @@ export const RecentOrders: React.FC = () => {
           <GridActionsCellItem
             key={2}
             icon={<CloseOutlined color="error" />}
-            sx={{ padding: "2px 6px" }}
             label={t("buttons.reject")}
             showInMenu
             onClick={() =>

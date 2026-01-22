@@ -13,7 +13,7 @@ import {
 import clsx from "clsx";
 
 import { Date, ReadingTime } from "@site/src/components/blog/common";
-import { BannerRandom } from "@site/src/components/banner/banner-random";
+import { BannerBlog } from "@site/src/components/banner/banner-blog";
 
 import {
   ChevronLeftCircle,
@@ -155,7 +155,7 @@ export const BlogPostPageView = ({ children }) => {
           src={`https://refine-web.imgix.net${frontMatter.image?.replace(
             "https://refine.ams3.cdn.digitaloceanspaces.com",
             "",
-          )}?w=1788`}
+          )}?fm=webp&auto=format&w=1788`}
           alt={title}
         />
       </div>
@@ -176,7 +176,7 @@ export const BlogPostPageView = ({ children }) => {
             )}
           </div>
           <div className="mx-6 mt-6 blog-lg:mt-10 mb-12">
-            <BannerRandom />
+            <BannerBlog />
           </div>
         </div>
         <h1 className="text-xl md:text-4xl" itemProp="headline">

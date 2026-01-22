@@ -1,5 +1,8 @@
 ---
-title: Theming
+title: "Theming Guide | Accessibility UI in Refine v5"
+display_title: "Theming"
+sidebar_label: "Theming"
+description: "Integrate Theming in Refine v5. Learn best practices. Learn integration patterns for accessibility, components for polished admin UIs. Learn with code examples."
 ---
 
 ```tsx live shared
@@ -52,7 +55,7 @@ const PostList: React.FC = () => {
   } = useTable({
     columns,
     refineCoreProps: {
-      initialPageSize: 5,
+      pagination: { pageSize: 5 },
     },
   });
 

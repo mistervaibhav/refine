@@ -1,6 +1,6 @@
 import MDXComponents from "@theme-original/MDXComponents";
 
-import { BannerRandom } from "@site/src/components/banner/banner-random";
+import { BannerBlog } from "@site/src/components/banner/banner-blog";
 import Checklist from "@site/src/components/checklist";
 import ChecklistItem from "@site/src/components/checklist-item";
 import CodeSandboxExample from "@site/src/components/codesandbox-example";
@@ -42,11 +42,12 @@ export default {
   CodeSandboxExample,
   ExampleLocalPrompt,
   ExampleSourcePrompt,
-  BannerRandom,
+  BannerBlog,
   GuideBadge,
   RouterBadge,
   GlobalConfigBadge,
   Image,
+  img: Image,
   table: Table,
   CreateRefineAppCommand: CreateRefineAppCommand,
   InstallPackagesCommand: InstallPackagesCommand,

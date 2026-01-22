@@ -1,5 +1,8 @@
 ---
-title: useDelete
+title: "useDelete Hook | Best Practices for Usage & Patterns in Refine v5"
+display_title: "useDelete"
+sidebar_label: "useDelete"
+description: "Build Use Delete in Refine v5. Learn the key steps. Learn scale REST, GraphQL for custom APIs and scalable data flows. Explore with code snippets."
 siderbar_label: useDelete
 source: packages/core/src/data/hooks/useDelete.ts
 ---
@@ -23,7 +26,7 @@ mutate({
 });
 
 // You can access mutation state through the mutation object:
-console.log(mutation.isLoading); // mutation loading state
+console.log(mutation.isPending); // mutation loading state
 console.log(mutation.data); // mutation response data
 console.log(mutation.error); // mutation error
 ```

@@ -1,5 +1,8 @@
 ---
-title: useMenu
+title: "useMenu Hook | Best Practices for Usage & Patterns in Refine v5"
+display_title: "useMenu"
+sidebar_label: "useMenu"
+description: "Implement Use Menu in Refine v5. Learn the key steps. Learn navigation, sidebar for real-world React admin panels. See practical code samples."
 source: packages/core/src/hooks/menu/useMenu.tsx
 ---
 
@@ -41,7 +44,7 @@ setInitialRoutes(["/"]);
 
 // visible-block-start
 import React from "react";
-import { useMenu, LayoutProps, ITreeMenu } from "@refinedev/core";
+import { useMenu, LayoutProps, TreeMenuItem } from "@refinedev/core";
 
 import { Link } from "react-router";
 
@@ -51,7 +54,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   // highlight-end
 
   // highlight-start
-  const renderMenuItems = (items: ITreeMenu[]) => {
+  const renderMenuItems = (items: TreeMenuItem[]) => {
     return (
       <>
         {items.map(({ key, name, label, icon, route }) => {
@@ -219,7 +222,7 @@ Now you can update your `<Layout/>` to support multi level rendering with follow
 
 ```tsx title="src/components/Layout.tsx"
 import React from "react";
-import { useMenu, LayoutProps, ITreeMenu } from "@refinedev/core";
+import { useMenu, LayoutProps, TreeMenuItem } from "@refinedev/core";
 
 import { Link } from "react-router";
 
@@ -227,7 +230,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
   const { menuItems, selectedKey } = useMenu();
 
   // highlight-start
-  const renderMenuItems = (items: ITreeMenu[]) => {
+  const renderMenuItems = (items: TreeMenuItem[]) => {
     return (
       <>
         {items.map(({ key, name, label, icon, route, children, list }) => {

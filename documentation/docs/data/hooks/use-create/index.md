@@ -1,5 +1,8 @@
 ---
-title: useCreate
+title: "useCreate Hook | Best Practices for Usage & Patterns in Refine v5"
+display_title: "useCreate"
+sidebar_label: "useCreate"
+description: "Learn to use the useCreate hook in Refine v5. Learn scale mutation and parameters for custom APIs and scalable data flows. Learn with code examples."
 source: packages/core/src/data/hooks/useCreate.ts
 ---
 
@@ -26,7 +29,7 @@ mutate({
 });
 
 // You can access mutation state through the mutation object:
-console.log(mutation.isLoading); // mutation loading state
+console.log(mutation.isPending); // mutation loading state
 console.log(mutation.data); // mutation response data
 console.log(mutation.error); // mutation error
 ```
@@ -77,7 +80,7 @@ mutate({
 });
 
 // You can access mutation status through the mutation object
-if (mutation.isLoading) {
+if (mutation.isPending) {
   console.log("Creating product...");
 }
 
@@ -132,7 +135,7 @@ mutate({
 });
 
 // Access mutation state
-if (mutation.isLoading) {
+if (mutation.isPending) {
   // Handle loading state
 }
 
@@ -309,7 +312,7 @@ const { overtime, mutation } = useCreate();
 console.log(overtime.elapsedTime); // undefined, 1000, 2000, 3000 4000, ...
 
 // Also access mutation state
-console.log(mutation.isLoading); // true/false
+console.log(mutation.isPending); // true/false
 ```
 
 ## API Reference

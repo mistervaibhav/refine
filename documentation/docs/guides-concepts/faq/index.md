@@ -1,5 +1,7 @@
 ---
-title: Frequently Asked Questions
+title: "Faq Guide | Best Practices in Refine v5"
+display_title: "Frequently Asked Questions"
+description: "Integrate Faq in Refine v5. Learn best practices. Learn data and property for real-world React admin panels. Real-world snippets included."
 sidebar_label: FAQ
 ---
 
@@ -330,9 +332,9 @@ To remove the GitHub Banner, you need to find and remove the `<GitHubBanner />` 
 
 Here are the locations where you can find and remove the `<GitHubBanner />` component based on different React platforms:
 
-- Vite: `src/App.tsx` - [See an example](https://github.com/refinedev/refine/blob/main/examples/auth-antd/src/App.tsx#L161)
-- Next.js: `src/app/layout.tsx` - [See an example](https://github.com/refinedev/refine/blob/main/examples/with-nextjs/src/app/layout.tsx#L37)
-- Remix: `app/root.tsx` - [See an example](https://github.com/refinedev/refine/blob/main/examples/with-remix-antd/app/root.tsx#L37)
+- Vite: `src/App.tsx` - [See an example](https://github.com/refinedev/refine/blob/main/examples/auth-antd/src/App.tsx#L166)
+- Next.js: `src/app/layout.tsx` - [See an example](https://github.com/refinedev/refine/blob/main/examples/with-nextjs/src/app/layout.tsx#L38)
+- Remix: `app/root.tsx` - [See an example](https://github.com/refinedev/refine/blob/main/examples/with-remix-antd/app/root.tsx#L39)
 
 ## How to solve "Module 'X' has no exported member 'Y'" error?
 

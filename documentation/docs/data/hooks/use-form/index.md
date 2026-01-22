@@ -1,5 +1,8 @@
 ---
-title: useForm
+title: "useForm Hook | Best Practices for Usage & Patterns | Refine v5"
+display_title: "useForm"
+sidebar_label: "useForm"
+description: "Set up Use Form in Refine v5. Learn best practices. Explore best practices to scale mutation and function for custom APIs and scalable data flows."
 source: packages/core/src/hooks/form/useForm.ts
 ---
 
@@ -408,13 +411,13 @@ const { formLoading } = useForm({ ... });
 
 ### mutation
 
-Result of the mutation triggered by calling `onFinish`. Depending on the action, it will be the result of `useCreate` or `useUpdate` hooks. The mutation state can be accessed through `mutation.isLoading`, `mutation.data`, `mutation.error`, etc.
+Result of the mutation triggered by calling `onFinish`. Depending on the action, it will be the result of `useCreate` or `useUpdate` hooks. The mutation state can be accessed through `mutation.isPending`, `mutation.data`, `mutation.error`, etc.
 
 ```tsx
 const { mutation } = useForm({ ... });
 
 // Access mutation state
-if (mutation.isLoading) {
+if (mutation.isPending) {
   // Handle loading state
 }
 

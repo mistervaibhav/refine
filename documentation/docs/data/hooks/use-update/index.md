@@ -1,5 +1,8 @@
 ---
-title: useUpdate
+title: "useUpdate Hook | Options, Patterns & Edge Cases in Refine v5"
+display_title: "useUpdate"
+sidebar_label: "useUpdate"
+description: "Build Use Update in Refine v5. Learn the key steps. Explore best practices to scale REST, GraphQL for custom APIs and scalable data flows."
 siderbar_label: useUpdate
 source: packages/core/src/data/hooks/useUpdate.ts
 ---
@@ -28,7 +31,7 @@ mutate({
 });
 
 // You can access mutation state through the mutation object:
-console.log(mutation.isLoading); // mutation loading state
+console.log(mutation.isPending); // mutation loading state
 console.log(mutation.data); // mutation response data
 console.log(mutation.error); // mutation error
 ```
@@ -80,7 +83,7 @@ mutate({
 });
 
 // You can access mutation status through the mutation object
-if (mutation.isLoading) {
+if (mutation.isPending) {
   console.log("Updating product...");
 }
 
@@ -107,7 +110,7 @@ mutate({
 });
 
 // Access mutation state
-if (mutation.isLoading) {
+if (mutation.isPending) {
   // Handle loading state
 }
 
@@ -487,7 +490,7 @@ const { overtime, mutation } = useUpdate();
 console.log(overtime.elapsedTime); // undefined, 1000, 2000, 3000 4000, ...
 
 // Also access mutation state
-console.log(mutation.isLoading); // true/false
+console.log(mutation.isPending); // true/false
 ```
 
 ## API Reference

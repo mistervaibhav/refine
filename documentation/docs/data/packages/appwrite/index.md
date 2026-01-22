@@ -1,5 +1,8 @@
 ---
-title: Appwrite
+title: "Appwrite Integration Guide | Best Practices in Refine v5"
+display_title: "Appwrite"
+sidebar_label: "Appwrite"
+description: "Set up Appwrite in Refine v5. Learn best practices. Learn scale REST, GraphQL for custom APIs and scalable data flows. Explore with code snippets."
 source: https://github.com/refinedev/refine/tree/main/packages/appwrite
 swizzle: true
 ---
@@ -84,7 +87,7 @@ import {
 } from "antd";
 
 const PostList: React.FC = () => {
-  const { result, tableProps, sorter } = RefineAntdUseTable<IPost>({
+  const { result, tableProps, sorters } = RefineAntdUseTable<IPost>({
     sorters: {
       initial: [
         {
@@ -114,7 +117,7 @@ const PostList: React.FC = () => {
           dataIndex="id"
           title="ID"
           sorter
-          defaultSortOrder={RefineAntdGetDefaultSortOrder("id", sorter)}
+          defaultSortOrder={RefineAntdGetDefaultSortOrder("id", sorters)}
         />
         <AntdTable.Column dataIndex="title" title="Title" sorter />
         <AntdTable.Column
@@ -589,7 +592,7 @@ export const PostsList: React.FC = () => {
           dataIndex="id"
           title="ID"
           sorter
-          defaultSortOrder={getDefaultSortOrder("id", sorter)}
+          defaultSortOrder={getDefaultSortOrder("id", sorters)}
         />
         <Table.Column dataIndex="title" title="Title" sorter />
         <Table.Column

@@ -1,5 +1,8 @@
 ---
-title: useModalForm
+title: "useModalForm Hook | Options, Patterns & Edge Cases | Refine v5"
+display_title: "useModalForm"
+sidebar_label: "useModalForm"
+description: "Build Use Modal Form in Refine v5. Learn the key steps. Learn best practices for values for real-world React admin panels. See practical code samples."
 ---
 
 ```tsx live shared
@@ -382,12 +385,14 @@ import { Modal } from "@components";
 
 const PostList = () => {
   const { result, tableQuery } = useTable<IPost>({
-    initialSorter: [
-      {
-        field: "id",
-        order: "desc",
-      },
-    ],
+    sorters: {
+      initial: [
+        {
+          field: "id",
+          order: "desc",
+        },
+      ],
+    },
   });
 
   // highlight-start

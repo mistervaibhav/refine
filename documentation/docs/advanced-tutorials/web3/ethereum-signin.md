@@ -1,6 +1,9 @@
 ---
 id: ethereum-signin
-title: Sign in with Ethereum Web3 Wallet
+title: "Ethereum Signin Tutorial | Workflows in Refine v5"
+display_title: "Sign in with Ethereum Web3 Wallet"
+sidebar_label: "Sign in with Ethereum Web3 Wallet"
+description: "Secure Ethereum Signin in Refine v5. Learn best practices. Explore production tips for wallet and dashboard for production-ready workflows."
 ---
 
 ## Introduction
@@ -159,7 +162,7 @@ import { useLogin } from "@refinedev/core";
 
 export const Login: React.FC = () => {
   // highlight-next-line
-  const { mutate: login, isLoading } = useLogin();
+  const { mutate: login, isPending } = useLogin();
 
   return (
     <Layout
@@ -179,7 +182,7 @@ export const Login: React.FC = () => {
         <Button
           type="primary"
           size="middle"
-          loading={isLoading}
+          loading={isPending}
           onClick={() => login({})}
         >
           Sign in with Ethereum

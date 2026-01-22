@@ -1,5 +1,8 @@
 ---
-title: Command Palette
+title: "Command Palette Integration Guide | Packages in Refine v5"
+display_title: "Command Palette"
+sidebar_label: "Command Palette"
+description: "Explore how to implement Command Palette in Refine v5. Learn access and control for real-world React admin panels. Explore with code snippets."
 ---
 
 ```tsx live shared
@@ -31,7 +34,7 @@ import {
 } from "antd";
 
 const PostList: React.FC = () => {
-  const { tableProps, sorter } = RefineAntdUseTable<IPost>();
+  const { tableProps } = RefineAntdUseTable<IPost>();
 
   const categoryIds =
     tableProps?.dataSource?.map((item) => item.categoryId) ?? [];
