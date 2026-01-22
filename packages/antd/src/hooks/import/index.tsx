@@ -99,7 +99,7 @@ export const useImport = <
 
           notification.open({
             description,
-            title: null,
+            message: null,
             key: `${resource}-import`,
             duration: 0,
           });

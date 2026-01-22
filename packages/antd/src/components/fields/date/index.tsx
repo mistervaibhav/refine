@@ -2,7 +2,7 @@ import React from "react";
 import dayjs from "dayjs";
 import { Typography } from "antd";
 
-import LocalizedFormat from "dayjs/plugin/localizedFormat.js";
+import LocalizedFormat from "dayjs/plugin/localizedFormat";
 
 import type { DateFieldProps } from "../types";
 
@@ -20,13 +20,12 @@ export const DateField: React.FC<DateFieldProps> = ({
   dayjs.extend(LocalizedFormat);
 
   const defaultLocale = dayjs.locale();
-  const normalizedLocale = Array.isArray(locales) ? locales[0] : locales;
 
   return (
     <Typography.Text {...rest}>
       {value
         ? dayjs(value)
-            .locale(normalizedLocale || defaultLocale)
+            .locale(locales || defaultLocale)
             .format(dateFormat)
         : ""}
     </Typography.Text>

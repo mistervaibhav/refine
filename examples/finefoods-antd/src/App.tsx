@@ -24,7 +24,7 @@ import {
 import jsonServerDataProvider from "@refinedev/simple-rest";
 import { authProvider } from "./authProvider";
 
-import "dayjs/locale/de.js";
+import "dayjs/locale/de";
 
 import { DashboardPage } from "./pages/dashboard";
 import { OrderList, OrderShow } from "./pages/orders";
