@@ -3,6 +3,7 @@ import dayjs from "dayjs";
 import { Typography } from "antd";
 
 import LocalizedFormat from "dayjs/plugin/localizedFormat";
+import "dayjs/locale/tr";
 
 import type { DateFieldProps } from "../types";
 

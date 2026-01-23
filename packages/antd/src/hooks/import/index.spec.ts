@@ -1,5 +1,5 @@
 import type { RcFile, UploadFile } from "antd/lib/upload/interface";
-import { act } from "react-dom/test-utils";
+import { act } from "react";
 import { notification } from "antd";
 import { renderHook } from "@testing-library/react";
 import { TestWrapper, MockJSONServer, waitFor } from "@test";

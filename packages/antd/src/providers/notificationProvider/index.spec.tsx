@@ -32,8 +32,8 @@ describe("Antd useNotificationProvider", () => {
       expect(notificationOpenSpy).toHaveBeenCalledTimes(1);
       expect(notificationOpenSpy).toHaveBeenCalledWith({
         key: "test-notification",
-        description: mockNotification.message,
-        title: null,
+        title: mockNotification.message,
+        description: null,
         type: "success",
       });
     });
@@ -49,8 +49,8 @@ describe("Antd useNotificationProvider", () => {
       expect(notificationOpenSpy).toHaveBeenCalledTimes(1);
       expect(notificationOpenSpy).toHaveBeenCalledWith({
         key: "test-notification",
-        description: mockNotification.message,
-        title: null,
+        title: mockNotification.message,
+        description: null,
         type: "error",
       });
     });
@@ -66,8 +66,8 @@ describe("Antd useNotificationProvider", () => {
       expect(notificationOpenSpy).toHaveBeenCalledTimes(1);
       expect(notificationOpenSpy).toHaveBeenCalledWith({
         key: "test-notification",
-        description: "Test Notification Message",
-        title: "Notification Description",
+        title: "Test Notification Message",
+        description: "Notification Description",
         type: "success",
       });
     });
@@ -137,8 +137,8 @@ describe("Antd useNotificationProvider", () => {
         expect(openFn).toHaveBeenCalledTimes(1);
         expect(openFn).toHaveBeenCalledWith({
           key: "test-notification",
-          description: mockNotification.message,
-          title: null,
+          title: mockNotification.message,
+          description: null,
           type: "success",
         });
       });
@@ -158,8 +158,8 @@ describe("Antd useNotificationProvider", () => {
         expect(openFn).toHaveBeenCalledTimes(1);
         expect(openFn).toHaveBeenCalledWith({
           key: "test-notification",
-          description: mockNotification.message,
-          title: null,
+          title: mockNotification.message,
+          description: null,
           type: "error",
         });
       });
@@ -179,8 +179,8 @@ describe("Antd useNotificationProvider", () => {
         expect(openFn).toHaveBeenCalledTimes(1);
         expect(openFn).toHaveBeenCalledWith({
           key: "test-notification",
-          description: "Test Notification Message",
-          title: "Notification Description",
+          title: "Test Notification Message",
+          description: "Notification Description",
           type: "success",
         });
       });

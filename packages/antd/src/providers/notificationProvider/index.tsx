@@ -41,8 +41,8 @@ export const useNotificationProvider = (): NotificationProvider => {
       } else {
         notification.open({
           key,
-          description: message,
-          title: description ?? null,
+          title: message,
+          description: description ?? null,
           type,
         });
       }

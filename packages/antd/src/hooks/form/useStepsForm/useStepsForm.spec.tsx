@@ -9,7 +9,7 @@ import { useSelect } from "../..";
 import { MockJSONServer, TestWrapper, fireEvent, render, waitFor } from "@test";
 import { MockRouterProvider } from "@test/dataMocks";
 import { SaveButton } from "@components/buttons";
-import { act } from "react-dom/test-utils";
+import { act } from "react";
 
 interface IPost {
   title: string;

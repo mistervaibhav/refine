@@ -1,14 +1,13 @@
-import type { QueryObserverResult } from "@tanstack/react-query";
 import type { Radio } from "antd";
 
 import {
   type BaseKey,
   type BaseOption,
   type BaseRecord,
-  type GetListResponse,
   type HttpError,
   useSelect,
   type UseSelectProps,
+  type UseSelectReturnType as CoreUseSelectReturnType,
 } from "@refinedev/core";
 
 export type UseRadioGroupReturnType<
@@ -19,7 +18,7 @@ export type UseRadioGroupReturnType<
   radioGroupProps: Omit<React.ComponentProps<typeof Radio.Group>, "options"> & {
     options: TOption[];
   };
-  query: QueryObserverResult<GetListResponse<TData>, TError>;
+  query: CoreUseSelectReturnType<TData, TError, TOption>["query"];
 };
 
 type UseRadioGroupProps<TQueryFnData, TError, TData> = Omit<
@@ -66,7 +65,8 @@ export const useRadioGroup = <
   ...rest
 }: UseRadioGroupProps<TQueryFnData, TError, TData>): UseRadioGroupReturnType<
   TData,
-  TOption
+  TOption,
+  TError
 > => {
   const { query, options } = useSelect<TQueryFnData, TError, TData, TOption>({
     resource,

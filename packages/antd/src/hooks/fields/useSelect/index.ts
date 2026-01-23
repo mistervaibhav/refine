@@ -1,14 +1,12 @@
 import type { SelectProps } from "antd/lib/select";
-import type { QueryObserverResult } from "@tanstack/react-query";
 
 import {
   useSelect as useSelectCore,
   type BaseRecord,
-  type GetManyResponse,
-  type GetListResponse,
   type HttpError,
   type UseSelectProps,
   type BaseOption,
+  type UseSelectReturnType as CoreUseSelectReturnType,
 } from "@refinedev/core";
 
 export type UseSelectReturnType<
@@ -17,8 +15,12 @@ export type UseSelectReturnType<
   TError extends HttpError = HttpError,
 > = {
   selectProps: SelectProps<TOption>;
-  query: QueryObserverResult<GetListResponse<TData>, TError>;
-  defaultValueQuery: QueryObserverResult<GetManyResponse<TData>, TError>;
+  query: CoreUseSelectReturnType<TData, TError, TOption>["query"];
+  defaultValueQuery: CoreUseSelectReturnType<
+    TData,
+    TError,
+    TOption
+  >["defaultValueQuery"]["query"];
 };
 
 /**
@@ -39,7 +41,7 @@ export const useSelect = <
   TOption extends BaseOption = BaseOption,
 >(
   props: UseSelectProps<TQueryFnData, TError, TData>,
-): UseSelectReturnType<TData, TOption> => {
+): UseSelectReturnType<TData, TOption, TError> => {
   const { query, defaultValueQuery, onSearch, options } = useSelectCore<
     TQueryFnData,
     TError,

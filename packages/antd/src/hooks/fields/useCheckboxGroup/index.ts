@@ -1,14 +1,13 @@
-import type { QueryObserverResult } from "@tanstack/react-query";
 import type { Checkbox } from "antd";
 
 import {
   type BaseRecord,
-  type GetListResponse,
   type HttpError,
   type UseSelectProps,
   useSelect,
   type BaseKey,
   type BaseOption,
+  type UseSelectReturnType as CoreUseSelectReturnType,
 } from "@refinedev/core";
 
 export type UseCheckboxGroupReturnType<
@@ -22,7 +21,7 @@ export type UseCheckboxGroupReturnType<
   > & {
     options: TOption[];
   };
-  query: QueryObserverResult<GetListResponse<TData>, TError>;
+  query: CoreUseSelectReturnType<TData, TError, TOption>["query"];
 };
 
 type UseCheckboxGroupProps<TQueryFnData, TError, TData> = Omit<
@@ -71,7 +70,7 @@ export const useCheckboxGroup = <
   TQueryFnData,
   TError,
   TData
->): UseCheckboxGroupReturnType<TData, TOption> => {
+>): UseCheckboxGroupReturnType<TData, TOption, TError> => {
   const { query, options } = useSelect<TQueryFnData, TError, TData, TOption>({
     resource,
     sorters,
